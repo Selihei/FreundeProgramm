@@ -4,8 +4,11 @@ void main() {
   // Reiseroute mit Distanzen
   Map<String, int> reiseroute = {"Max": 120, "Peter": 90, "Anna": 270, "Lena": 180};
   Map<String, int> extrafriends = {}; 
-
 int counter = 0;
+print("Willst du noch extra Freunde hinzufügen?");
+String? extra = stdin.readLineSync();
+if(extra == "ja")
+{
 while(counter != 3)
 {
     print("Gib einen Freund ein");
@@ -20,10 +23,10 @@ while(counter != 3)
     print("Freunde: $extrafriends");
     counter = counter + 1;
     }
-    else
-    print("ungültige Eingabe");
 }
-
+}
+else if(extra == null || extra == "nein")
+{
   // Geschwindigekeit fest
   //int geschwindigkeit = 90; // km/h
 
@@ -59,4 +62,5 @@ while(counter != 3)
   print("durchschnittliche Entfernung: $durchEnt km");
   print("Gesamtfahrzeit: ${gesamtZeit.toStringAsFixed(2)} Stunden");
   print("durchschnittliche Fahrtzeit: ${durchFahr.toStringAsFixed(2)} Stunden");
+}
 }
